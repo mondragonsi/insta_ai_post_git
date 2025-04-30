@@ -70,10 +70,28 @@ def postar_imagem_instagram(cl, image_path, textoPost, textoStory):
     cl.photo_upload(path=image_path, caption=textoPost)
     cl.photo_upload_to_story(path=image_path, caption=textoStory)
 
+def verificar_senha(senha_input):
+    """Verifica se a senha fornecida corresponde à senha de administrador."""
+    senha_admin = os.getenv("SENHA_ADMIN")
+    return senha_input == senha_admin
+
 def main():
     """Função principal que orquestra o fluxo de criação e postagem com Streamlit."""
     carregar_variaveis_ambiente()
     st.title("Gerador de Imagens e Postagem no Instagram")
+
+    if "senha_confirmada" not in st.session_state:
+        st.session_state["senha_confirmada"] = False
+
+    if not st.session_state["senha_confirmada"]:
+        senha_input = st.text_input("Digite a senha de administrador para continuar:", type="password")
+        if st.button("OK"):
+            if verificar_senha(senha_input):
+                st.session_state["senha_confirmada"] = True
+                st.success("Senha confirmada! Você pode acessar as funcionalidades.")
+            else:
+                st.error("Senha incorreta. Por favor, tente novamente.")
+        return
 
     tabs = st.tabs(["Geração de Imagem", "Postagem no Instagram"])
 
