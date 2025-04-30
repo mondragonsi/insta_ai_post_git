@@ -2,4 +2,4 @@ streamlit
 openai
 python-dotenv
 instagrapi
-cv2
+opencv-python
