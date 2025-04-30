@@ -1,0 +1,52 @@
+# Python specific ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+*.pot
+*.mo
+*.env
+*.venv
+.env/
+.venv/
+*.sqlite3
+*.db
+*.dat
+*.sqlite
+*.pkl
+*.h5
+*.hdf5
+*.pyc
+*.ipynb_checkpoints
+
+# Streamlit specific ignores
+.streamlit/
+.streamlit/secrets.toml
+
+# Jupyter Notebook specific ignores
+.ipynb_checkpoints/
+
+# macOS specific ignores
+.DS_Store
+
+# Windows specific ignores
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE specific ignores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.orig
+*.rej
