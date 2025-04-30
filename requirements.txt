@@ -2,3 +2,6 @@ streamlit
 openai
 python-dotenv
 instagrapi
+dotenv
+base64
+cv2

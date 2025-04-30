@@ -1,8 +1,7 @@
+import os
+import base64
 import streamlit as st
 from instagrapi import Client
-import os
-import requests
-import base64
 import cv2
 from dotenv import load_dotenv
 from openai import OpenAI
